@@ -3,9 +3,8 @@ import { Fab, Icon, Button } from 'native-base';
 
 const ChoresFab = props => (
   <Fab
-    active={props.active}
+    active
     direction="up"
-    containerStyle={{ }}
     style={{ backgroundColor: '#5067FF' }}
     position="bottomRight"
     onPress={() => props.toggleFab()}>

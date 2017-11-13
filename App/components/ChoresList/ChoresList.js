@@ -23,7 +23,7 @@ const ChoresList = () => (
           <Text note>$10</Text>
         </Body>
         <Right>
-          <Text note>Weekly</Text>
+          <Text note>Monthly</Text>
         </Right>
     </ListItem>
     <ListItem>
@@ -43,7 +43,7 @@ const ChoresList = () => (
           <Text note>$10</Text>
         </Body>
         <Right>
-          <Text note>Weekly</Text>
+          <Text note>Daily</Text>
         </Right>
     </ListItem>
   </List>
