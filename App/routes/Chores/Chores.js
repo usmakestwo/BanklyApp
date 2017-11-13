@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'native-base';
+import { Col, Row } from "react-native-easy-grid";
 import Layout from '../../components/Layout/Layout';
 import ChoresList from '../../components/ChoresList/ChoresList';
 import ChoresFab from '../../components/ChoresFab/ChoresFab';
@@ -21,7 +21,9 @@ class ChoresScreen extends Component {
     return (
       <Layout>
         <ChoresList />
-        <ChoresFab active={this.state.active} toggleFab={this.toggleFab} />
+        <Row style={{ height: 100 }}>
+          <ChoresFab active={this.state.active} toggleFab={this.toggleFab} />
+        </Row>
       </Layout>
     )
   }

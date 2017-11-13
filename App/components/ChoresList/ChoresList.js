@@ -2,7 +2,7 @@ import React from 'react';
 import { Body, List, ListItem, Text, CheckBox, Right } from 'native-base';
 
 const ChoresList = () => (
-  <List>
+  <List style={{ height: 420 }}>
     <ListItem itemDivider>
       <Text>Chores</Text>
     </ListItem>
