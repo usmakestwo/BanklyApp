@@ -1,0 +1,52 @@
+[{
+  "customers": {
+    "id": "1",
+    "first-name": "marie",
+    "last-name": "bardari",
+    "email": "mariebardari@gmail.com"
+  },
+  "accounts": [
+      {
+      "account": {
+        "id": "1",
+        "customer_id": "1",
+        "account_type": "CHEQUINGS",
+        "balance": 40
+      },
+      "transactions": [
+        {
+          "id": "1",
+          "account_id": "1",
+          "transaction_type": "CREDIT",
+          "category": "Wishlist",
+          "amount": 50,
+          "date": "05/07/2017"
+        },
+        {
+          "id": "2",
+          "account_id": "1",
+          "transaction_type": "DEBIT",
+          "category": "Chore",
+          "amount": 20,
+          "date": "04/24/2017"
+        },
+        {
+          "id": "3",
+          "account_id": "1",
+          "transaction_type": "CREDIT",
+          "category": "Food",
+          "amount": 30,
+          "date": "03/14/2017"
+        },
+        {
+          "id": "4",
+          "account_id": "1",
+          "transaction_type": "DEBIT",
+          "category": "Allowance",
+          "amount": 100,
+          "date": "03/12/2017"
+        }
+      ]
+    }
+  ]
+}]

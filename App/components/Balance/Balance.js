@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
     height: 120,
     flexDirection: 'row',
     backgroundColor: '#fff',
+    borderBottomColor: '#c3c3c3',
+    borderBottomWidth: 1,
   },
   avatarContainer: {
     width: '40%',
