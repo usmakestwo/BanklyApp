@@ -38,10 +38,10 @@ const styles = StyleSheet.create({
 });
 
 /**
- * Header Component
+ * Balance Component
  * @param {object} props - Props
  */
-const Header = props => (
+const Balance = props => (
   <View style={styles.header}>
     <View style={styles.avatarContainer}>
       <Image
@@ -56,8 +56,8 @@ const Header = props => (
   </View>
 );
 
-Header.propTypes = {
+Balance.propTypes = {
   amount: PropTypes.number.isRequired,
 };
 
-export default Header;
+export default Balance;

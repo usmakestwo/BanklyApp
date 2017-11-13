@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { Container, Header, Title, Content, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import PropTypes from 'prop-types';
-import Header from '../Header/Header';
+import Balance from '../Balance/Balance';
 
 class Layout extends Component {
   static propTypes = {
@@ -9,10 +9,23 @@ class Layout extends Component {
   };
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Header amount={100} />
-        {this.props.children}
-      </View>
+      <Container>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Icon name='menu' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Bankly</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content>
+          <Balance amount={100} />
+          {this.props.children}
+        </Content>
+      </Container>
     );
   }
 }
