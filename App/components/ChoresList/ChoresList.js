@@ -1,52 +1,50 @@
 import React from 'react';
-import { Container, Header, Content, List, ListItem, Text } from 'native-base';
+import { Body, List, ListItem, Text, CheckBox, Right } from 'native-base';
 
 const ChoresList = () => (
   <List>
-    <ListItem>
-      <Text>Clean Washroom | $50</Text>
+    <ListItem itemDivider>
+      <Text>Chores</Text>
     </ListItem>
     <ListItem>
-      <Text>Do the dishes | $50</Text>
+        <CheckBox checked={false} />
+        <Body>
+          <Text>Wash Car</Text>
+          <Text note>$10</Text>
+        </Body>
+        <Right>
+          <Text note>Weekly</Text>
+        </Right>
     </ListItem>
     <ListItem>
-      <Text>Wash the car | $30</Text>
+        <CheckBox checked={false} />
+        <Body>
+          <Text>Wash Car</Text>
+          <Text note>$10</Text>
+        </Body>
+        <Right>
+          <Text note>Weekly</Text>
+        </Right>
     </ListItem>
     <ListItem>
-      <Text>Clean Washroom | $50</Text>
+        <CheckBox checked={false} />
+        <Body>
+          <Text>Wash Car</Text>
+          <Text note>$10</Text>
+        </Body>
+        <Right>
+          <Text note>Weekly</Text>
+        </Right>
     </ListItem>
     <ListItem>
-      <Text>Do the dishes | $50</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Wash the car | $30</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Clean Washroom | $50</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Do the dishes | $50</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Wash the car | $30</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Clean Washroom | $50</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Do the dishes | $50</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Wash the car | $30</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Clean Washroom | $50</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Do the dishes | $50</Text>
-    </ListItem>
-    <ListItem>
-      <Text>Wash the car | $30</Text>
+        <CheckBox checked={false} />
+        <Body>
+          <Text>Wash Car</Text>
+          <Text note>$10</Text>
+        </Body>
+        <Right>
+          <Text note>Weekly</Text>
+        </Right>
     </ListItem>
   </List>
 );
