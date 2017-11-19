@@ -1,5 +1,14 @@
- [
-  "1",
-  "3",
-  "6"
+[
+  {
+    "id": 1,
+    "name": "Wash Car",
+    "amount": 10,
+    "due": "weekly"
+  },
+  {
+    "id": 2,
+    "name": "Do the dishes",
+    "amount": 10,
+    "due": "daily"
+  }
 ]

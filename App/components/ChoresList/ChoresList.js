@@ -1,51 +1,24 @@
 import React from 'react';
 import { Body, List, ListItem, Text, CheckBox, Right } from 'native-base';
+import chores from '../../mock/chores.json';
 
 const ChoresList = () => (
   <List style={{ height: 420 }}>
     <ListItem itemDivider>
       <Text>Chores</Text>
     </ListItem>
-    <ListItem>
+    {chores.map((chore) => (
+      <ListItem key={chore.id}>
         <CheckBox checked={false} />
         <Body>
-          <Text>Wash Car</Text>
-          <Text note>$10</Text>
+          <Text>{chore.name}</Text>
+          <Text note>${chore.amount}</Text>
         </Body>
         <Right>
-          <Text note>Weekly</Text>
+          <Text note>{chore.due}</Text>
         </Right>
-    </ListItem>
-    <ListItem>
-        <CheckBox checked={false} />
-        <Body>
-          <Text>Wash Car</Text>
-          <Text note>$10</Text>
-        </Body>
-        <Right>
-          <Text note>Monthly</Text>
-        </Right>
-    </ListItem>
-    <ListItem>
-        <CheckBox checked={false} />
-        <Body>
-          <Text>Wash Car</Text>
-          <Text note>$10</Text>
-        </Body>
-        <Right>
-          <Text note>Weekly</Text>
-        </Right>
-    </ListItem>
-    <ListItem>
-        <CheckBox checked={false} />
-        <Body>
-          <Text>Wash Car</Text>
-          <Text note>$10</Text>
-        </Body>
-        <Right>
-          <Text note>Daily</Text>
-        </Right>
-    </ListItem>
+      </ListItem>
+    ))}
   </List>
 );
 
