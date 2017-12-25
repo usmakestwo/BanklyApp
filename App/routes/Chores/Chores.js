@@ -21,7 +21,7 @@ class ChoresScreen extends Component {
   render() {
     return (
       <Layout>
-        <ChoresList />
+        <ChoresList chores={mockChores} />
         <Row style={{ height: 100 }}>
           <ChoresFab toggleFab={this.toggleFab} />
           <ChoresModal active={this.state.active} toggleFab={this.toggleFab}/>
