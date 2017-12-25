@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getChoreService } from '../../actions/chore';
 import { Col, Row } from "react-native-easy-grid";
 import Layout from '../../components/Layout/Layout';
 import ChoresList from '../../components/ChoresList/ChoresList';
 import ChoresFab from '../../components/ChoresFab/ChoresFab';
 import ChoresModal from '../../components/ChoresModal/ChoresModal';
-import mockChores from '../../mock/chores.json';
+
 
 class ChoresScreen extends Component {
   constructor(props) {
@@ -14,6 +16,10 @@ class ChoresScreen extends Component {
     };
     this.toggleFab = this.toggleFab.bind(this);
   }
+
+  componentWillMount() {
+    this.props.getChoreService(1);
+  }
   
   toggleFab() {
     this.setState({ active: !this.state.active });
@@ -21,7 +27,7 @@ class ChoresScreen extends Component {
   render() {
     return (
       <Layout>
-        <ChoresList chores={mockChores} />
+        <ChoresList chores={this.props.chores} />
         <Row style={{ height: 100 }}>
           <ChoresFab toggleFab={this.toggleFab} />
           <ChoresModal active={this.state.active} toggleFab={this.toggleFab}/>
@@ -31,4 +37,12 @@ class ChoresScreen extends Component {
   }
 };
 
-export default ChoresScreen;
+const mapState = state => ({
+  chores: state.chore.chores,
+});
+
+const mapDispatchToProps = dispatch => ({
+  getChoreService: () => dispatch(getChoreService()),
+});
+
+export default connect(mapState, mapDispatchToProps)(ChoresScreen);

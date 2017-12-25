@@ -1,28 +1,16 @@
-/* eslint-disable no-underscore-dangle */
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+/* eslint no-underscore-dangle: 0 */
+
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
-import user from './App/reducers/user';
-import chores from './App/reducers/chores';
+import rootReducer from './App/reducers';
+import createLogger from './App/logger/logger';
 
-/**
- * Defining all reducers
- */
-const reducers = {
-  user,
-  chores,
-};
+const initialState = {};
+const middleware = [thunk];
 
-/**
- * Create store with reducers, routing, logger and thunk
- */
-const store = createStore(
-  combineReducers({ ...reducers, }),
-  applyMiddleware(
-    thunk,
-    logger,
-  )
-);
+let enhancer = applyMiddleware(...middleware);
+
+// See https://github.com/rackt/redux/releases/tag/v3.1.0
+const store = createStore(rootReducer, initialState, enhancer);
 
 export default store;
-/* eslint-enable */
