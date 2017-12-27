@@ -7,7 +7,9 @@ import ChoresList from '../../components/ChoresList/ChoresList';
 import ChoresFab from '../../components/ChoresFab/ChoresFab';
 import ChoresModal from '../../components/ChoresModal/ChoresModal';
 
-
+/**
+ * Chore Route
+ */
 class ChoresScreen extends Component {
   constructor(props) {
     super(props);
@@ -42,7 +44,7 @@ const mapState = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getChoreService: () => dispatch(getChoreService()),
+  getChoreService: (id) => dispatch(getChoreService(id)),
 });
 
 export default connect(mapState, mapDispatchToProps)(ChoresScreen);

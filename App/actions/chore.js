@@ -28,15 +28,13 @@ export const choreFetchError = payload => ({
 });
 
 /**
- * Dispatches an action to retrieve todo structure for Todo Service
+ * Dispatches an action to retrieve chore structure for Chore Service
  * @param {string} id - Customer ID
  */
 export const getChoreService = id => async dispatch => {
   try {
     dispatch(choreFetchSuccess(await fetchChoreByCustId(id)));
-    debugger;
   } catch (e) {
-    debugger;
     dispatch(choreFetchError(e));
     console.error(e);
   }

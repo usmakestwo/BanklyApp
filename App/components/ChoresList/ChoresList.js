@@ -1,6 +1,10 @@
 import React from 'react';
 import { Body, List, ListItem, Text, CheckBox, Right } from 'native-base';
 
+/**
+ * Render chore list
+ * @param {object} props - Chores
+ */
 const ChoresList = props => (
   <List style={{ height: 420 }}>
     <ListItem itemDivider>
@@ -8,13 +12,13 @@ const ChoresList = props => (
     </ListItem>
     {props.chores.map((chore) => (
       <ListItem key={chore.id}>
-        <CheckBox checked={false} />
+        <CheckBox checked={chore.completed} />
         <Body>
           <Text>{chore.name}</Text>
           <Text note>${chore.amount}</Text>
         </Body>
         <Right>
-          <Text note>{chore.due}</Text>
+          <Text note>{chore.recurrent}</Text>
         </Right>
       </ListItem>
     ))}
