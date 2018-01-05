@@ -7,6 +7,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChoresScreen from './Chores/Chores';
 import ProfileScreen from './Profile/Profile';
 
+/**
+ * Tab Navigator
+ */
 const RootTabs = TabNavigator({
   Chores: {
     screen: ChoresScreen,

@@ -11,6 +11,10 @@ import {
   Input } from 'native-base';
 import { Col } from "react-native-easy-grid";
 
+/**
+ * Render modal to add Chores
+ * @param {object} props - Chore props
+ */
 const ChoresModal = props => (
   <Modal
     animationType="slide"

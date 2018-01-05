@@ -5,6 +5,9 @@ import {
   CHORE_SERVICE_LOADING
 } from '../constants';
 
+/**
+ * Initial Chore state
+ */
 const initialState = {
   chores: [],
   hasErrored: false,

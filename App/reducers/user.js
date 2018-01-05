@@ -1,3 +1,6 @@
+/**
+ * Initial user state
+ */
 const initialState = {
   firstName: '',
   lastName: '',
