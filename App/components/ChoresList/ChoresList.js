@@ -12,7 +12,10 @@ const ChoresList = props => (
     </ListItem>
     {props.chores.map((chore) => (
       <ListItem key={chore.id}>
-        <CheckBox checked={chore.completed} />
+        <CheckBox
+          checked={chore.completed}
+          onPress={() => props.onPress(chore.id)}
+        />
         <Body>
           <Text>{chore.name}</Text>
           <Text note>${chore.amount}</Text>
