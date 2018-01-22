@@ -30,12 +30,10 @@ export default function chores(state = initialState, action) {
         isSuccessful: true,
       };
     case CHORE_UPDATE_STATUS:
-      console.log('Before', state.chores);
       return {
         ...state,
-        chores: state.chores.forEach(elem => elem.id === action.id ? elem.completed = !elem.completed : elem.completed),
+        chores: state.chores.map((elem) => elem.id === action.id ? {...elem, completed: !elem.completed} : elem),
       }
-      console.log('After' + state.chores);
     case CHORE_SERVICE_LOADING:
       return {
         ...state,
