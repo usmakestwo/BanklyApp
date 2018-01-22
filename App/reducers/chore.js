@@ -32,7 +32,7 @@ export default function chores(state = initialState, action) {
     case CHORE_UPDATE_STATUS:
       return {
         ...state,
-        chores: state.chores.map((elem) => elem.id === action.id ? {...elem, completed: !elem.completed} : elem),
+        chores: state.chores.map(elem => elem.id === action.id ? {...elem, completed: !elem.completed} : elem),
       }
     case CHORE_SERVICE_LOADING:
       return {
