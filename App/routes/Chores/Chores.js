@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getChoreService } from '../../actions/chore';
+import {
+  getChoreService,
+  choreUpdateStatus
+} from '../../actions/chore';
 import { Col, Row } from "react-native-easy-grid";
 import Layout from '../../components/Layout/Layout';
 import ChoresList from '../../components/ChoresList/ChoresList';
@@ -16,7 +19,11 @@ class ChoresScreen extends Component {
     this.state = {
       active: false,
     };
+    /**
+     * Bind event handlers to this
+     */
     this.toggleFab = this.toggleFab.bind(this);
+    this.toggleChore = this.toggleChore.bind(this);
   }
 
   /**
@@ -30,13 +37,29 @@ class ChoresScreen extends Component {
   toggleFab() {
     this.setState({ active: !this.state.active });
   }
+
+  /**
+   * Toggles checkbox of chore list
+   * @param id - chore id
+   */
+  toggleChore(id) {
+    this.props.choreUpdateStatus(id);
+  }
   render() {
     return (
       <Layout>
-        <ChoresList chores={this.props.chores} />
+        <ChoresList
+          chores={this.props.chores}
+          onPress={this.toggleChore}
+          />
         <Row style={{ height: 100 }}>
-          <ChoresFab toggleFab={this.toggleFab} />
-          <ChoresModal active={this.state.active} toggleFab={this.toggleFab}/>
+          <ChoresFab
+            toggleFab={this.toggleFab}
+          />
+          <ChoresModal
+            active={this.state.active}
+            toggleFab={this.toggleFab}
+          />
         </Row>
       </Layout>
     )
@@ -57,6 +80,7 @@ const mapState = state => ({
  */
 const mapDispatchToProps = dispatch => ({
   getChoreService: (id) => dispatch(getChoreService(id)),
+  choreUpdateStatus: (id) => dispatch(choreUpdateStatus(id)),
 });
 
 export default connect(mapState, mapDispatchToProps)(ChoresScreen);

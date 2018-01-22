@@ -2,7 +2,8 @@
 import {
   CHORE_SERVICE_SUCCESS,
   CHORE_SERVICE_ERROR,
-  CHORE_SERVICE_LOADING
+  CHORE_SERVICE_LOADING,
+  CHORE_UPDATE_STATUS,
 } from '../constants';
 
 /**
@@ -23,12 +24,16 @@ const initialState = {
 export default function chores(state = initialState, action) {
   switch (action.type) {
     case CHORE_SERVICE_SUCCESS:
-      debugger;
       return {
         ...state,
         chores: action.payload,
         isSuccessful: true,
       };
+    case CHORE_UPDATE_STATUS:
+      return {
+        ...state,
+        chores: state.chores.map(elem => elem.id === action.id ? {...elem, completed: !elem.completed} : elem),
+      }
     case CHORE_SERVICE_LOADING:
       return {
         ...state,
