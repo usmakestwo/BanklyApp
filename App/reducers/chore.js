@@ -1,4 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
+import update from 'immutability-helper';
+
 import {
   CHORE_SERVICE_SUCCESS,
   CHORE_SERVICE_ERROR,
@@ -33,7 +35,7 @@ export default function chores(state = initialState, action) {
       console.log('Before', state.chores);
       return {
         ...state,
-        chores: state.chores.forEach(elem => elem.id === action.id ? elem.completed = !elem.completed : elem.completed),
+        chores: flipValueInObject(state.chores, action.id),
       }
       console.log('After' + state.chores);
     case CHORE_SERVICE_LOADING:
@@ -49,4 +51,15 @@ export default function chores(state = initialState, action) {
     default:
       return state;
   }
+}
+
+/**
+ * 
+ * @param {object} chores - Chore object
+ * @param {integer} id - Chore ID
+ */
+function flipValueInObject(chores, choreId) {
+  return update(chores, {id: {$apply: function(choreId) {
+    return id === choreId ? completed = !completed : completed;
+  }}});
 }
